@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    var scrum: DailyScrum
     
     var body: some View {
         List {
@@ -41,6 +41,15 @@ struct DetailView: View {
                     Label(attendee.name, systemImage: "person")
                 }
             }
+            Text(String(scrum.status))
+//            Toggle("status", isOn: self.$scrum.status)
+//            Toggle(isOn: Binding<Bool>(
+//                      get: { scrum.status },
+//                      set: {
+//                          scrum.status = $0
+//                      })) {
+//                      Text("status")
+//                  }
          }
         .navigationTitle(scrum.title)
     }
